@@ -1,0 +1,10 @@
+# dsh-ollama plugin — bundle patch: insert the Ollama adapter row.
+#
+# Uses Ollama's native /api/chat protocol with NDJSON streaming,
+# native thinking/reasoning fields, and native tool calling.
+# Configure via the llm-ollama: section in settings.yaml.
+- insert:
+    - id: llm-ollama
+      name: 'dsh-ollama'
+      config:
+        baseURL: 'http://127.0.0.1:11434'
