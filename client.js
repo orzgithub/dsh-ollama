@@ -9,110 +9,111 @@ window.__ModuleLoader__.load({
 
     // ─── Locale Dictionaries ────────────────────────────────────────────────
 
-    const zh = {
-      "settings.title": "Ollama",
-      "settings.desc": "Ollama \u672c\u5730\u6a21\u578b\u670d\u52a1\u7ba1\u7406",
-      "endpoint.title": "\u8fde\u63a5\u8bbe\u7f6e",
-      "endpoint.baseUrl": "\u670d\u52a1\u5730\u5740",
-      "endpoint.hint": "Ollama \u670d\u52a1\u5668\u5730\u5740\uff0c\u4f8b\u5982 http://127.0.0.1:11434",
-      "endpoint.save": "\u4fdd\u5b58",
-      "endpoint.test": "\u6d4b\u8bd5",
-      "endpoint.testing": "\u6d4b\u8bd5\u4e2d...",
-      "endpoint.connected": "\u5df2\u8fde\u63a5 \u2014 {n} \u4e2a\u6a21\u578b\u53ef\u7528",
-      "endpoint.failed": "\u8fde\u63a5\u5931\u8d25",
-      "models.title": "\u5df2\u5b89\u88c5\u6a21\u578b",
-      "models.loading": "\u52a0\u8f7d\u4e2d...",
-      "models.empty": "\u6682\u65e0\u5df2\u5b89\u88c5\u6a21\u578b\uff0c\u8bf7\u5728\u4e0b\u65b9\u62c9\u53d6\u6a21\u578b",
-      "models.info": "\u8be6\u60c5",
-      "models.hide": "\u6536\u8d77",
-      "models.remove": "\u79fb\u9664",
-      "models.removeConfirm": "\u786e\u8ba4\u79fb\u9664\u6a21\u578b \"{name}\" \uff1f",
-      "models.removeFailed": "\u79fb\u9664\u5931\u8d25: {error}",
-      "pull.title": "\u62c9\u53d6\u6a21\u578b",
-      "pull.placeholder": "\u8f93\u5165\u6a21\u578b\u540d\u79f0\uff0c\u4f8b\u5982 llama3.1:8b, qwen2.5:14b",
-      "pull.hint": "\u652f\u6301 Ollama \u5e93\u6a21\u578b\u6216 HuggingFace tag",
-      "pull.button": "\u62c9\u53d6",
-      "pull.complete": "\u62c9\u53d6\u5b8c\u6210",
-      "pull.starting": "\u5f00\u59cb\u62c9\u53d6...",
-      "params.title": "Ollama \u53c2\u6570",
-      "params.button": "Ollama \u53c2\u6570",
-      "params.temperature": "Temperature",
-      "params.seed": "Seed",
-      "params.top_k": "Top K",
-      "params.top_p": "Top P",
-      "params.min_p": "Min P",
-      "params.repeat_penalty": "Repeat Penalty",
-      "params.repeat_last_n": "Repeat Last N",
-      "params.num_predict": "Max Tokens",
-      "params.num_ctx": "Context Length",
-      "params.stop": "Stop Sequences",
-      "params.stopHint": "\u9017\u53f7\u5206\u9694",
-      "params.think": "Thinking",
-      "params.thinkOn": "\u5f00\u542f",
-      "params.thinkOff": "\u5173\u95ed",
-      "params.mirostat": "Mirostat",
-      "params.mirostat_tau": "Mirostat Tau",
-      "params.mirostat_eta": "Mirostat Eta",
-      "params.frequency_penalty": "Frequency Penalty",
-      "params.presence_penalty": "Presence Penalty",
-      "params.tfs_z": "TFS Z",
-      "params.typical_p": "Typical P",
-      "params.reset": "\u91cd\u7f6e\u9ed8\u8ba4",
-      "params.hint": "\u4ec5\u5f53\u4f7f\u7528 Ollama \u6a21\u578b\u65f6\u751f\u6548",
-      "params.defaultLabel": "\u9ed8\u8ba4",
-    };
-
-    const en = {
-      "settings.title": "Ollama",
-      "settings.desc": "Ollama local model service management",
-      "endpoint.title": "Connection",
-      "endpoint.baseUrl": "Base URL",
-      "endpoint.hint": "Ollama server address, e.g. http://127.0.0.1:11434",
-      "endpoint.save": "Save",
-      "endpoint.test": "Test",
-      "endpoint.testing": "Testing...",
-      "endpoint.connected": "Connected \u2014 {n} model(s) available",
-      "endpoint.failed": "Connection failed",
-      "models.title": "Installed Models",
-      "models.loading": "Loading...",
-      "models.empty": "No models installed. Pull a model below.",
-      "models.info": "Info",
-      "models.hide": "Hide",
-      "models.remove": "Remove",
-      "models.removeConfirm": "Remove model \"{name}\"?",
-      "models.removeFailed": "Remove failed: {error}",
-      "pull.title": "Pull Model",
-      "pull.placeholder": "Enter model name, e.g. llama3.1:8b, qwen2.5:14b",
-      "pull.hint": "Supports Ollama library models or HuggingFace tags",
-      "pull.button": "Pull",
-      "pull.complete": "Pull complete",
-      "pull.starting": "Starting pull...",
-      "params.title": "Ollama Parameters",
-      "params.button": "Ollama Params",
-      "params.temperature": "Temperature",
-      "params.seed": "Seed",
-      "params.top_k": "Top K",
-      "params.top_p": "Top P",
-      "params.min_p": "Min P",
-      "params.repeat_penalty": "Repeat Penalty",
-      "params.repeat_last_n": "Repeat Last N",
-      "params.num_predict": "Max Tokens",
-      "params.num_ctx": "Context Length",
-      "params.stop": "Stop Sequences",
-      "params.stopHint": "comma-separated",
-      "params.think": "Thinking",
-      "params.thinkOn": "On",
-      "params.thinkOff": "Off",
-      "params.mirostat": "Mirostat",
-      "params.mirostat_tau": "Mirostat Tau",
-      "params.mirostat_eta": "Mirostat Eta",
-      "params.frequency_penalty": "Frequency Penalty",
-      "params.presence_penalty": "Presence Penalty",
-      "params.tfs_z": "TFS Z",
-      "params.typical_p": "Typical P",
-      "params.reset": "Reset Defaults",
-      "params.hint": "Only effective when using Ollama models",
-      "params.defaultLabel": "default",
+    const lang_dict = {
+      "zh-CN": {
+        "settings.title": "Ollama",
+        "settings.desc": "Ollama 本地模型服务管理",
+        "endpoint.title": "连接设置",
+        "endpoint.baseUrl": "服务地址",
+        "endpoint.hint": "Ollama 服务器地址，例如 http://127.0.0.1:11434",
+        "endpoint.save": "保存",
+        "endpoint.test": "测试",
+        "endpoint.testing": "测试中...",
+        "endpoint.connected": "已连接 — {n} 个模型可用",
+        "endpoint.failed": "连接失败",
+        "models.title": "已安装模型",
+        "models.loading": "加载中...",
+        "models.empty": "暂无已安装模型，请在下方拉取模型",
+        "models.info": "详情",
+        "models.hide": "收起",
+        "models.remove": "移除",
+        "models.removeConfirm": "确认移除模型 \"{name}\" ？",
+        "models.removeFailed": "移除失败: {error}",
+        "pull.title": "拉取模型",
+        "pull.placeholder": "输入模型名称，例如 llama3.1:8b, qwen2.5:14b",
+        "pull.hint": "支持 Ollama 库模型或 HuggingFace tag",
+        "pull.button": "拉取",
+        "pull.complete": "拉取完成",
+        "pull.starting": "开始拉取...",
+        "params.title": "Ollama 参数",
+        "params.button": "Ollama 参数",
+        "params.temperature": "Temperature",
+        "params.seed": "Seed",
+        "params.top_k": "Top K",
+        "params.top_p": "Top P",
+        "params.min_p": "Min P",
+        "params.repeat_penalty": "Repeat Penalty",
+        "params.repeat_last_n": "Repeat Last N",
+        "params.num_predict": "Max Tokens",
+        "params.num_ctx": "Context Length",
+        "params.stop": "Stop Sequences",
+        "params.stopHint": "逗号分隔",
+        "params.think": "Thinking",
+        "params.thinkOn": "开启",
+        "params.thinkOff": "关闭",
+        "params.mirostat": "Mirostat",
+        "params.mirostat_tau": "Mirostat Tau",
+        "params.mirostat_eta": "Mirostat Eta",
+        "params.frequency_penalty": "Frequency Penalty",
+        "params.presence_penalty": "Presence Penalty",
+        "params.tfs_z": "TFS Z",
+        "params.typical_p": "Typical P",
+        "params.reset": "重置默认",
+        "params.hint": "仅当使用 Ollama 模型时生效",
+        "params.defaultLabel": "默认",
+      },
+      "en-US": {
+        "settings.title": "Ollama",
+        "settings.desc": "Ollama local model service management",
+        "endpoint.title": "Connection",
+        "endpoint.baseUrl": "Base URL",
+        "endpoint.hint": "Ollama server address, e.g. http://127.0.0.1:11434",
+        "endpoint.save": "Save",
+        "endpoint.test": "Test",
+        "endpoint.testing": "Testing...",
+        "endpoint.connected": "Connected — {n} model(s) available",
+        "endpoint.failed": "Connection failed",
+        "models.title": "Installed Models",
+        "models.loading": "Loading...",
+        "models.empty": "No models installed. Pull a model below.",
+        "models.info": "Info",
+        "models.hide": "Hide",
+        "models.remove": "Remove",
+        "models.removeConfirm": "Remove model \"{name}\"?",
+        "models.removeFailed": "Remove failed: {error}",
+        "pull.title": "Pull Model",
+        "pull.placeholder": "Enter model name, e.g. llama3.1:8b, qwen2.5:14b",
+        "pull.hint": "Supports Ollama library models or HuggingFace tags",
+        "pull.button": "Pull",
+        "pull.complete": "Pull complete",
+        "pull.starting": "Starting pull...",
+        "params.title": "Ollama Parameters",
+        "params.button": "Ollama Params",
+        "params.temperature": "Temperature",
+        "params.seed": "Seed",
+        "params.top_k": "Top K",
+        "params.top_p": "Top P",
+        "params.min_p": "Min P",
+        "params.repeat_penalty": "Repeat Penalty",
+        "params.repeat_last_n": "Repeat Last N",
+        "params.num_predict": "Max Tokens",
+        "params.num_ctx": "Context Length",
+        "params.stop": "Stop Sequences",
+        "params.stopHint": "comma-separated",
+        "params.think": "Thinking",
+        "params.thinkOn": "On",
+        "params.thinkOff": "Off",
+        "params.mirostat": "Mirostat",
+        "params.mirostat_tau": "Mirostat Tau",
+        "params.mirostat_eta": "Mirostat Eta",
+        "params.frequency_penalty": "Frequency Penalty",
+        "params.presence_penalty": "Presence Penalty",
+        "params.tfs_z": "TFS Z",
+        "params.typical_p": "Typical P",
+        "params.reset": "Reset Defaults",
+        "params.hint": "Only effective when using Ollama models",
+        "params.defaultLabel": "default",
+      },
     };
 
     // ─── CSS ──────────────────────────────────────────────────────────────────
@@ -130,7 +131,11 @@ window.__ModuleLoader__.load({
 .ollama-body{flex-direction:column;gap:14px;padding:0 14px 14px;display:flex}
 .ollama-section{flex-direction:column;gap:8px;display:flex}
 .ollama-sectionTitle{color:var(--dsw-alias-label-primary);font-size:13px;font-weight:600;border-bottom:1px solid var(--dsw-alias-border-l2);padding-bottom:4px}
-.ollama-field{flex-direction:column;gap:4px;min-width:0;display:flex}
+.ollama-row{display:flex;align-items:center;gap:12px}
+.ollama-row .ollama-label{flex:none;min-width:64px}
+.ollama-controls{display:flex;gap:8px;flex:1;align-items:center}
+.ollama-controls .ollama-input{flex:1}
+.ollama-controls .ollama-input,.ollama-controls .ollama-btn{height:32px;box-sizing:border-box}
 .ollama-label{color:var(--dsw-alias-label-primary);font-size:13px;font-weight:500}
 .ollama-hint{color:var(--dsw-alias-label-tertiary);font-size:12px}
 .ollama-input{border:1px solid var(--dsw-alias-border-l2);font:inherit;color:var(--dsw-alias-label-primary);background:var(--dsw-specific-input-major);border-radius:6px;padding:6px 8px;font-size:13px;width:100%;box-sizing:border-box}
@@ -161,17 +166,16 @@ window.__ModuleLoader__.load({
 .ollama-progress{width:100%;height:4px;background:var(--dsw-alias-bg-layer-1);border-radius:2px;overflow:hidden;margin-top:4px}
 .ollama-progressBar{height:100%;background:var(--dsw-alias-state-business-primary);transition:width .3s;border-radius:2px}
 .ollama-log{font-family:monospace;font-size:11px;color:var(--dsw-alias-label-tertiary);background:var(--dsw-alias-bg-layer-1);border-radius:4px;padding:8px;max-height:120px;overflow-y:auto;white-space:pre-wrap;word-break:break-all}
-.ollama-fieldRow{display:flex;gap:8px;align-items:flex-end}
-.ollama-fieldRow .ollama-field{flex:1}
 .ollama-empty{color:var(--dsw-alias-label-tertiary);font-size:13px;text-align:center;padding:16px}
 .ollama-spinner{display:inline-block;width:14px;height:14px;border:2px solid var(--dsw-alias-border-l2);border-top-color:var(--dsw-alias-state-business-primary);border-radius:50%;animation:ollamaSpin .6s linear infinite}
 @keyframes ollamaSpin{to{transform:rotate(360deg)}}
 .ollama-detail{padding:4px 8px 8px;font-size:12px}
 .ollama-detailPre{font-family:monospace;font-size:11px;color:var(--dsw-alias-label-tertiary);background:var(--dsw-alias-bg-layer-1);border-radius:4px;padding:8px;white-space:pre-wrap;word-break:break-all}
-.ollama-paramsPopup{position:absolute;bottom:calc(100% + 8px);right:0;z-index:100;background:var(--dsw-alias-bg-layer-1);border:1px solid var(--dsw-alias-border-l2);border-radius:10px;box-shadow:var(--dsw-elevation-panel);padding:14px;min-width:320px;max-width:420px;max-height:70vh;overflow-y:auto}
-.ollama-paramsPopupTitle{font-size:13px;font-weight:600;color:var(--dsw-alias-label-primary);padding-bottom:8px;border-bottom:1px solid var(--dsw-alias-border-l2);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
-.ollama-paramsGroup{display:flex;flex-direction:column;gap:8px}
-.ollama-paramsField{display:flex;flex-direction:column;gap:2px}
+.ollama-paramsPopup{position:absolute;bottom:calc(100% + 8px);right:0;z-index:1100;background:var(--dsw-specific-menu);--dsw-elevation-stroke-color:var(--dsw-alias-border-l1);width:max-content;min-width:min(320px,100vw - 32px);max-width:min(420px,100vw - 32px);max-height:min(360px,100vh - 96px);box-shadow:var(--dsw-elevation-prominent);color:var(--dsw-alias-label-primary);--dsh-scrollbar-thumb:var(--dsw-alias-scrollbar-bg-l2);--dsh-scrollbar-thumb-hover:var(--dsw-alias-scrollbar-hover-l2);border:0;border-radius:20px;flex-direction:column;padding:4px;display:flex;overflow:hidden}
+.ollama-paramsPopupTitle{font-size:13px;font-weight:600;color:var(--dsw-alias-label-primary);padding:6px 10px;display:flex;justify-content:space-between;align-items:center}
+.ollama-paramsGroup{display:flex;flex-direction:column;gap:2px;padding:4px;overflow-y:auto}
+.ollama-paramsField{display:flex;flex-direction:column;gap:2px;padding:6px 8px;border-radius:8px}
+.ollama-paramsField:hover{background:var(--dsw-alias-interactive-bg-hover)}
 .ollama-paramsLabel{font-size:12px;font-weight:500;color:var(--dsw-alias-label-primary);display:flex;justify-content:space-between;align-items:center}
 .ollama-paramsDefault{font-size:11px;color:var(--dsw-alias-label-tertiary);font-weight:400}
 .ollama-paramsInput{border:1px solid var(--dsw-alias-border-l2);font:inherit;font-size:12px;color:var(--dsw-alias-label-primary);background:var(--dsw-specific-input-major);border-radius:4px;padding:4px 6px;width:100%;box-sizing:border-box}
@@ -199,10 +203,8 @@ window.__ModuleLoader__.load({
     const SETTINGS_NS = "llm-ollama";
     const DEFAULT_BASE_URL = "http://127.0.0.1:11434";
 
-    // ─── Helpers ──────────────────────────────────────────────────────────────
-
     function formatBytes(bytes) {
-      if (!bytes || bytes === 0) return "\u2014";
+      if (!bytes || bytes === 0) return "—";
       const units = ["B", "KB", "MB", "GB", "TB"];
       let i = 0;
       let size = bytes;
@@ -304,16 +306,16 @@ window.__ModuleLoader__.load({
 
       return h("div", { className: "ollama-section" },
         h("div", { className: "ollama-sectionTitle" }, dict("endpoint.title")),
-        h("label", { className: "ollama-label" }, dict("endpoint.baseUrl")),
-        h("div", { className: "ollama-fieldRow" },
-          h("input", {
-            className: "ollama-input",
-            value: draft,
-            placeholder: DEFAULT_BASE_URL,
-            onChange: (e) => setDraft(e.target.value),
-            onKeyDown: (e) => { if (e.key === "Enter") save(); },
-          }),
-          h("div", { style: { display: "flex", gap: 6, flexShrink: 0 } },
+        h("div", { className: "ollama-row" },
+          h("label", { className: "ollama-label" }, dict("endpoint.baseUrl")),
+          h("div", { className: "ollama-controls" },
+            h("input", {
+              className: "ollama-input",
+              value: draft,
+              placeholder: DEFAULT_BASE_URL,
+              onChange: (e) => setDraft(e.target.value),
+              onKeyDown: (e) => { if (e.key === "Enter") save(); },
+            }),
             h("button", {
               className: "ollama-btn ollama-btnPrimary",
               disabled: saving,
@@ -357,7 +359,7 @@ window.__ModuleLoader__.load({
         h("div", { className: "ollama-modelRow" },
           h("span", { className: "ollama-modelName", title: model.name }, model.name),
           h("span", { className: "ollama-modelMeta" },
-            [params, quant, size].filter(Boolean).join(" \u00b7 ")
+            [params, quant, size].filter(Boolean).join(" · ")
           ),
           h("div", { className: "ollama-modelActions" },
             h("button", {
@@ -394,24 +396,22 @@ window.__ModuleLoader__.load({
       const [name, setName] = react.useState("");
       return h("div", { className: "ollama-section" },
         h("div", { className: "ollama-sectionTitle" }, dict("pull.title")),
-        h("div", { className: "ollama-fieldRow" },
-          h("div", { className: "ollama-field" },
-            h("input", {
-              className: "ollama-input",
-              value: name,
-              placeholder: dict("pull.placeholder"),
-              disabled: pulling,
-              onChange: (e) => setName(e.target.value),
-              onKeyDown: (e) => { if (e.key === "Enter" && !pulling && name.trim()) onPull(name.trim()); },
-            }),
-            h("span", { className: "ollama-hint" }, dict("pull.hint"))
-          ),
+        h("div", { className: "ollama-controls" },
+          h("input", {
+            className: "ollama-input",
+            value: name,
+            placeholder: dict("pull.placeholder"),
+            disabled: pulling,
+            onChange: (e) => setName(e.target.value),
+            onKeyDown: (e) => { if (e.key === "Enter" && !pulling && name.trim()) onPull(name.trim()); },
+          }),
           h("button", {
             className: "ollama-btn ollama-btnPrimary",
             disabled: pulling || !name.trim(),
             onClick: () => { if (name.trim()) onPull(name.trim()); },
           }, pulling ? h(Spinner) : dict("pull.button")),
         ),
+        h("span", { className: "ollama-hint" }, dict("pull.hint")),
         pullProgress && h("div", null,
           h("div", { className: "ollama-progress" },
             h("div", {
@@ -510,10 +510,10 @@ window.__ModuleLoader__.load({
           h("div", { className: "ollama-headText" },
             h("span", { className: "ollama-name" }, t("settings.title")),
             h("span", { className: "ollama-desc" },
-              `${baseUrl}${models.length > 0 ? ` \u2014 ${models.length}` : ""}`
+              `${baseUrl}${models.length > 0 ? ` — ${models.length}` : ""}`
             ),
           ),
-          h("span", { className: `ollama-chevron ${open ? "ollama-chevronOpen" : ""}` }, "\u25be"),
+          h("span", { className: `ollama-chevron ${open ? "ollama-chevronOpen" : ""}` }, "▾"),
         ),
         open && h("div", { className: "ollama-body" },
           h(EndpointSection, { baseUrl, dict: t, onSave: handleSave, onTest: handleTest, testStatus }),
@@ -636,7 +636,7 @@ window.__ModuleLoader__.load({
             className: "ollama-btn",
             style: { fontSize: 11, padding: "2px 6px" },
             onClick: onClose,
-          }, "\u2715"),
+          }, "✕"),
         ),
         h("div", { className: "ollama-paramsGroup" },
           PARAM_FIELDS.map((f, i) =>
@@ -724,10 +724,11 @@ window.__ModuleLoader__.load({
     function apply(ctx) {
       const modelDirectories = ctx.modelDirectories;
       // Detect language
-      const lang = typeof navigator !== "undefined"
-        ? (navigator.language || "").startsWith("zh") ? "zh" : "en"
-        : "en";
-      const dict = lang === "zh" ? zh : en;
+      const detected = typeof navigator !== "undefined" ? navigator.language : "en-US";
+      const langBase = detected.split("-")[0];
+      const dict = lang_dict[detected]
+        || Object.values(lang_dict).find((_, i) => Object.keys(lang_dict)[i].startsWith(langBase))
+        || lang_dict["en-US"];
       const t = (key, params) => localeString(dict, key, params);
 
       // Settings scope

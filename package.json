@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "description": "DeepSeek Harness plugin for Ollama native protocol",
   "type": "module",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "exports": {
-    ".": "./src/index.js",
+    ".": "./lib/index.js",
     "./client": "./client.js",
     "./package.json": "./package.json"
   },
