@@ -9,18 +9,18 @@ A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin for
 - **Ollama Native API** — Uses `/api/chat` NDJSON streaming directly, no OpenAI-compatible bridge needed
 - **Model Management** — Browse installed models, pull new ones, view details, remove
 - **Configurable Parameters** — Adjust Ollama-specific params like Temperature, Top K/P, Mirostat, Seed, thinking mode, and more
-- **GUI Configuration** — All settings managed through the DSH settings panel, no manual config files
+- **GUI Configuration** — All settings managed through the DSH Plugins page, no manual config files
 
 ## Prerequisites
 
 - [Ollama](https://ollama.com/) installed and running (default: `http://127.0.0.1:11434`)
-- [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) v0.1.7+
+- [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) v0.17+
 
 ## Configuration
 
 All configuration is done through the DSH GUI:
 
-1. Open **Settings > Plugins > Ollama**
+1. Open the sidebar **Plugins** page and use the **Ollama** bundle card
 2. **Connection** — Set your Ollama server address and test connectivity
 3. **Installed Models** — View, inspect, and remove models
 4. **Pull Model** — Download new models by name (e.g. `llama3.1:8b`)

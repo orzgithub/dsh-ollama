@@ -119,87 +119,80 @@ window.__ModuleLoader__.load({
     // ─── CSS ──────────────────────────────────────────────────────────────────
 
     const css = `
-.ollama-card{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-3);border-radius:8px;min-width:0;list-style:none;transition:border-color .16s,background .16s;overflow:hidden;margin-bottom:8px}
-.ollama-cardOpen{background:var(--dsw-alias-bg-layer-2);border-color:var(--dsw-alias-label-dimmed)}
-.ollama-header{width:100%;color:inherit;cursor:pointer;text-align:left;font:inherit;background:0 0;border:0;align-items:center;gap:8px;padding:10px 14px;display:flex}
-.ollama-header:hover:not(:disabled){background:var(--dsw-alias-interactive-bg-hover)}
-.ollama-headText{flex-direction:column;flex:1;gap:2px;min-width:0;display:flex;overflow:hidden}
-.ollama-name{color:var(--dsw-alias-label-primary);white-space:nowrap;text-overflow:ellipsis;font-weight:600;overflow:hidden}
-.ollama-desc{color:var(--dsw-alias-label-tertiary);white-space:nowrap;text-overflow:ellipsis;font-size:12px;overflow:hidden}
-.ollama-chevron{color:var(--dsw-alias-label-tertiary);flex:none;font-size:13px;transition:transform .12s}
-.ollama-chevronOpen{transform:rotate(180deg)}
-.ollama-body{flex-direction:column;gap:14px;padding:0 14px 14px;display:flex}
-.ollama-section{flex-direction:column;gap:8px;display:flex}
-.ollama-sectionTitle{color:var(--dsw-alias-label-primary);font-size:13px;font-weight:600;border-bottom:1px solid var(--dsw-alias-border-l2);padding-bottom:4px}
-.ollama-row{display:flex;align-items:center;gap:12px}
-.ollama-row .ollama-label{flex:none;min-width:64px}
-.ollama-controls{display:flex;gap:8px;flex:1;align-items:center}
-.ollama-controls .ollama-input{flex:1}
-.ollama-controls .ollama-input,.ollama-controls .ollama-btn{height:32px;box-sizing:border-box}
-.ollama-label{color:var(--dsw-alias-label-primary);font-size:13px;font-weight:500}
-.ollama-hint{color:var(--dsw-alias-label-tertiary);font-size:12px}
-.ollama-input{border:1px solid var(--dsw-alias-border-l2);font:inherit;color:var(--dsw-alias-label-primary);background:var(--dsw-specific-input-major);border-radius:6px;padding:6px 8px;font-size:13px;width:100%;box-sizing:border-box}
-.ollama-input:hover:not(:disabled){border-color:var(--dsw-alias-label-dimmed)}
-.ollama-input:focus-visible{outline:2px solid var(--dsw-alias-state-business-primary);outline-offset:1px}
-.ollama-input:disabled{opacity:.6;cursor:default}
-.ollama-btnConversation{height:28px;color:var(--dsw-alias-label-secondary);cursor:pointer;background:0 0;border:none;border-radius:24px;outline:none;align-items:center;gap:4px;padding:0 4px 0 8px;font-size:13px;font-weight:500;line-height:20px;display:flex}
+.ollama-body{max-width:720px;color:var(--dsw-alias-label-primary);flex-direction:column;gap:12px;display:flex}
+.ollama-section{flex-direction:column;gap:12px;display:flex}
+.ollama-sectionTitle{color:var(--dsw-alias-label-primary);margin:0;font-size:14px;font-weight:500;line-height:22px;border-bottom:.5px solid var(--dsw-alias-border-l2);padding-bottom:6px}
+.ollama-field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.ollama-fieldLabel{color:var(--dsw-alias-label-secondary);font-size:12px;font-weight:500;line-height:18px}
+.ollama-actions{display:flex;justify-content:flex-end;gap:8px}
+.ollama-hint{color:var(--dsw-alias-label-tertiary);margin:0;font-size:12px;line-height:18px}
+.ollama-input{box-sizing:border-box;height:32px;padding:0 10px;border:.5px solid var(--dsw-alias-border-l4);border-radius:var(--dsw-radius-md);background:var(--dsw-alias-bg-layer-1);font:inherit;font-size:14px;line-height:22px;color:var(--dsw-alias-label-primary);width:100%;outline:none}
+.ollama-input::placeholder{color:var(--dsw-alias-label-dimmed)}
+.ollama-input:hover:not(:disabled){border-color:var(--dsw-alias-border-l3)}
+.ollama-input:focus{border-color:var(--dsw-alias-state-business-primary)}
+.ollama-input:disabled{opacity:.4;cursor:not-allowed}
+.ollama-btnConversation{box-sizing:border-box;display:inline-flex;align-items:center;gap:4px;height:28px;padding:0 10px;border:none;border-radius:var(--dsw-radius-sm);background:transparent;color:var(--dsw-alias-label-secondary);font:inherit;font-size:12px;line-height:18px;cursor:pointer}
 .ollama-btnConversation:hover{background:var(--dsw-alias-interactive-bg-hover)}
-.ollama-btnConversation:focus-visible{box-shadow:0 0 0 2px var(--dsw-alias-border-l3)}
-.ollama-btnConversationActive{background:var(--dsw-alias-interactive-bg-hover)}
-.ollama-btn{font:inherit;cursor:pointer;border-radius:6px;padding:5px 12px;font-size:13px;border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-3);color:var(--dsw-alias-label-primary);transition:background .13s}
+.ollama-btnConversation:active{background:var(--dsw-alias-interactive-bg-active)}
+.ollama-btnConversation:focus-visible{outline:var(--dsw-focus-ring-width) solid var(--dsw-focus-ring-color,var(--dsw-alias-state-business-primary));outline-offset:2px}
+.ollama-btnConversationActive{background:var(--dsw-alias-button-tool-bar-fill);color:var(--dsw-alias-label-primary)}
+.ollama-btn{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:4px;height:36px;padding:0 14px;border:.5px solid var(--dsw-alias-border-l3);border-radius:var(--dsw-radius-md);background:transparent;color:var(--dsw-alias-label-primary);font:inherit;font-size:14px;line-height:22px;cursor:pointer;white-space:nowrap}
 .ollama-btn:hover:not(:disabled){background:var(--dsw-alias-interactive-bg-hover)}
-.ollama-btn:disabled{opacity:.5;cursor:default}
-.ollama-btnPrimary{border:1px solid var(--dsw-alias-button-info-fill);background:var(--dsw-alias-button-info-fill);color:var(--dsw-alias-label-primary-foreground)}
-.ollama-btnPrimary:hover:not(:disabled){border-color:var(--dsw-alias-button-info-hover);background:var(--dsw-alias-button-info-hover)}
-.ollama-btnDanger{border:1px solid var(--dsw-alias-state-error-border);background:transparent;color:var(--dsw-alias-state-error-primary)}
-.ollama-btnDanger:hover:not(:disabled){background:var(--dsw-alias-state-error-bg-hover)}
-.ollama-status{font-size:12px;line-height:1.5}
-.ollama-statusOk{color:var(--dsw-alias-state-ok-primary)}
+.ollama-btn:active:not(:disabled){background:var(--dsw-alias-interactive-bg-active)}
+.ollama-btn:disabled{cursor:not-allowed;opacity:.4}
+.ollama-btn:focus-visible{outline:var(--dsw-focus-ring-width) solid var(--dsw-focus-ring-color,var(--dsw-alias-state-business-primary));outline-offset:2px}
+.ollama-btnPrimary{border:none;background:var(--dsw-alias-button-primary-fill);color:var(--dsw-alias-label-primary-foreground)}
+.ollama-btnPrimary:hover:not(:disabled){background:var(--dsw-alias-button-primary-hover)}
+.ollama-btnDanger{border:none;background:transparent;color:var(--dsw-alias-state-error-primary)}
+.ollama-btnDanger:hover:not(:disabled){background:var(--dsw-alias-interactive-bg-hover-danger)}
+.ollama-status{margin:0;font-size:12px;line-height:18px}
+.ollama-statusOk{color:var(--dsw-alias-state-success-primary)}
 .ollama-statusErr{color:var(--dsw-alias-state-error-primary)}
-.ollama-statusWarn{color:var(--dsw-alias-state-warn-primary)}
-.ollama-modelsList{flex-direction:column;gap:4px;display:flex;max-height:400px;overflow-y:auto}
-.ollama-modelRow{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;border:1px solid transparent;transition:background .12s,border-color .12s}
-.ollama-modelRow:hover{background:var(--dsw-alias-interactive-bg-hover);border-color:var(--dsw-alias-border-l2)}
-.ollama-modelName{font-size:13px;font-weight:500;color:var(--dsw-alias-label-primary);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ollama-modelMeta{font-size:11px;color:var(--dsw-alias-label-tertiary);white-space:nowrap}
-.ollama-modelActions{display:flex;gap:4px;flex-shrink:0}
-.ollama-progress{width:100%;height:4px;background:var(--dsw-alias-bg-layer-1);border-radius:2px;overflow:hidden;margin-top:4px}
-.ollama-progressBar{height:100%;background:var(--dsw-alias-state-business-primary);transition:width .3s;border-radius:2px}
-.ollama-log{font-family:monospace;font-size:11px;color:var(--dsw-alias-label-tertiary);background:var(--dsw-alias-bg-layer-1);border-radius:4px;padding:8px;max-height:120px;overflow-y:auto;white-space:pre-wrap;word-break:break-all}
-.ollama-empty{color:var(--dsw-alias-label-tertiary);font-size:13px;text-align:center;padding:16px}
+.ollama-statusWarn{color:var(--dsw-alias-state-warn-label)}
+.ollama-modelsList{flex-direction:column;gap:8px;margin:0;padding:0;list-style:none;display:flex;max-height:400px;overflow-y:auto}
+.ollama-modelRow{display:flex;align-items:center;gap:12px;padding:12px 14px;border:.5px solid var(--dsw-alias-settings-card-stroke);background:var(--dsw-alias-settings-card-fill);border-radius:var(--dsw-radius-xl)}
+.ollama-modelName{font-size:14px;font-weight:500;line-height:22px;color:var(--dsw-alias-label-primary);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ollama-modelMeta{font-size:11px;line-height:16px;color:var(--dsw-alias-label-tertiary);white-space:nowrap}
+.ollama-modelActions{display:inline-flex;align-items:center;gap:4px;flex:none;margin-left:auto}
+.ollama-modelActions .ollama-btn{height:28px;padding:0 10px;border-radius:var(--dsw-radius-sm);font-size:12px;line-height:18px}
+.ollama-progress{width:100%;height:4px;background:var(--dsw-alias-bg-layer-1);border-radius:var(--dsw-radius-xs);overflow:hidden;margin-top:4px}
+.ollama-progressBar{height:100%;background:var(--dsw-alias-state-business-primary);transition:width .3s;border-radius:var(--dsw-radius-xs)}
+.ollama-log{font-family:monospace;font-size:11px;line-height:16px;color:var(--dsw-alias-label-tertiary);background:var(--dsw-alias-bg-layer-1);border-radius:var(--dsw-radius-sm);padding:8px;max-height:120px;overflow-y:auto;white-space:pre-wrap;word-break:break-all}
+.ollama-empty{color:var(--dsw-alias-label-tertiary);font-size:14px;line-height:22px;text-align:center;padding:16px}
 .ollama-spinner{display:inline-block;width:14px;height:14px;border:2px solid var(--dsw-alias-border-l2);border-top-color:var(--dsw-alias-state-business-primary);border-radius:50%;animation:ollamaSpin .6s linear infinite}
 @keyframes ollamaSpin{to{transform:rotate(360deg)}}
 .ollama-detail{padding:4px 8px 8px;font-size:12px}
-.ollama-detailPre{font-family:monospace;font-size:11px;color:var(--dsw-alias-label-tertiary);background:var(--dsw-alias-bg-layer-1);border-radius:4px;padding:8px;white-space:pre-wrap;word-break:break-all}
-.ollama-paramsPopup{position:absolute;bottom:calc(100% + 8px);right:0;z-index:1100;background:var(--dsw-specific-menu);--dsw-elevation-stroke-color:var(--dsw-alias-border-l1);width:max-content;min-width:min(320px,100vw - 32px);max-width:min(420px,100vw - 32px);max-height:min(360px,100vh - 96px);box-shadow:var(--dsw-elevation-prominent);color:var(--dsw-alias-label-primary);--dsh-scrollbar-thumb:var(--dsw-alias-scrollbar-bg-l2);--dsh-scrollbar-thumb-hover:var(--dsw-alias-scrollbar-hover-l2);border:0;border-radius:20px;flex-direction:column;padding:4px;display:flex;overflow:hidden}
+.ollama-detailPre{font-family:monospace;font-size:11px;line-height:16px;color:var(--dsw-alias-label-tertiary);background:var(--dsw-alias-bg-layer-1);border-radius:var(--dsw-radius-sm);padding:8px;white-space:pre-wrap;word-break:break-all}
+.ollama-paramsPopup{position:absolute;bottom:calc(100% + 4px);right:0;z-index:1100;background:var(--dsw-menu-surface-fill);-webkit-backdrop-filter:var(--dsw-menu-backdrop-filter);backdrop-filter:var(--dsw-menu-backdrop-filter);--dsw-elevation-stroke-color:var(--dsw-alias-border-l1);width:max-content;min-width:min(320px,100vw - 32px);max-width:min(420px,100vw - 32px);max-height:min(360px,100vh - 96px);box-shadow:var(--dsw-elevation-prominent);color:var(--dsw-alias-label-primary);--dsh-scrollbar-thumb:var(--dsw-alias-scrollbar-bg-l2);--dsh-scrollbar-thumb-hover:var(--dsw-alias-scrollbar-hover-l2);border:0;border-radius:var(--dsw-radius-lg);flex-direction:column;padding:4px;display:flex;overflow:hidden}
 .ollama-paramsPopupTitle{font-size:13px;font-weight:600;color:var(--dsw-alias-label-primary);padding:6px 10px;display:flex;justify-content:space-between;align-items:center}
 .ollama-paramsGroup{display:flex;flex-direction:column;gap:2px;padding:4px;overflow-y:auto}
-.ollama-paramsField{display:flex;flex-direction:column;gap:2px;padding:6px 8px;border-radius:8px}
+.ollama-paramsField{display:flex;flex-direction:column;gap:2px;padding:6px 8px;border-radius:var(--dsw-radius-sm)}
 .ollama-paramsField:hover{background:var(--dsw-alias-interactive-bg-hover)}
-.ollama-paramsLabel{font-size:12px;font-weight:500;color:var(--dsw-alias-label-primary);display:flex;justify-content:space-between;align-items:center}
-.ollama-paramsDefault{font-size:11px;color:var(--dsw-alias-label-tertiary);font-weight:400}
-.ollama-paramsInput{border:1px solid var(--dsw-alias-border-l2);font:inherit;font-size:12px;color:var(--dsw-alias-label-primary);background:var(--dsw-specific-input-major);border-radius:4px;padding:4px 6px;width:100%;box-sizing:border-box}
-.ollama-paramsInput:focus-visible{outline:2px solid var(--dsw-alias-state-business-primary);outline-offset:1px}
-.ollama-paramsInput::placeholder{color:var(--dsw-alias-label-tertiary)}
-.ollama-paramsToggle{display:flex;gap:0;border:1px solid var(--dsw-alias-border-l2);border-radius:4px;overflow:hidden}
-.ollama-paramsToggleBtn{flex:1;padding:4px 8px;font:inherit;font-size:12px;border:0;background:transparent;color:var(--dsw-alias-label-secondary);cursor:pointer;transition:background .12s}
-.ollama-paramsToggleBtnActive{background:var(--dsw-alias-state-business-primary);color:var(--dsw-alias-label-primary-foreground)}
-.ollama-paramsDivider{border:0;border-top:1px solid var(--dsw-alias-border-l2);margin:4px 0}
+.ollama-paramsLabel{font-size:12px;font-weight:500;line-height:18px;color:var(--dsw-alias-label-secondary);display:flex;justify-content:space-between;align-items:center}
+.ollama-paramsDefault{font-size:11px;line-height:16px;color:var(--dsw-alias-label-tertiary);font-weight:400}
+.ollama-paramsInput{box-sizing:border-box;height:28px;padding:0 8px;border:.5px solid var(--dsw-alias-border-l4);border-radius:var(--dsw-radius-sm);background:var(--dsw-alias-bg-layer-1);font:inherit;font-size:12px;line-height:18px;color:var(--dsw-alias-label-primary);width:100%;outline:none}
+.ollama-paramsInput::placeholder{color:var(--dsw-alias-label-dimmed)}
+.ollama-paramsInput:focus{border-color:var(--dsw-alias-state-business-primary)}
+.ollama-paramsToggle{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:2px;padding:4px;border-radius:var(--dsw-radius-md);background:var(--dsw-alias-interactive-bg-hover)}
+.ollama-paramsToggleBtn{box-sizing:border-box;height:28px;padding:0 16px;border:0;border-radius:var(--dsw-radius-sm);background:transparent;color:var(--dsw-alias-label-secondary);font:inherit;font-size:13px;line-height:20px;font-weight:500;cursor:pointer;white-space:nowrap}
+.ollama-paramsToggleBtn:hover{color:var(--dsw-alias-label-primary)}
+.ollama-paramsToggleBtnActive{background:var(--dsw-alias-bg-layer-1);color:var(--dsw-alias-label-primary);box-shadow:var(--dsw-elevation-soft)}
+.ollama-paramsDivider{border:0;border-top:.5px solid var(--dsw-alias-border-l2);margin:4px 0}
 `;
     if (typeof document !== "undefined") {
-      const existing = document.querySelector("style[data-plugin-css='dsh-ollama']");
-      if (!existing) {
-        const tag = document.createElement("style");
+      let tag = document.querySelector("style[data-plugin-css='dsh-ollama']");
+      if (!tag) {
+        tag = document.createElement("style");
         tag.dataset.plugin = "dsh-ollama";
         tag.dataset.pluginCss = "dsh-ollama";
-        tag.textContent = css;
         document.head.appendChild(tag);
       }
+      tag.textContent = css;
     }
 
     // ─── Constants ────────────────────────────────────────────────────────────
 
-    const NS = "dsh-ollama";
+    const PKG_NAME = "dsh-ollama";
     const SETTINGS_NS = "llm-ollama";
     const DEFAULT_BASE_URL = "http://127.0.0.1:11434";
 
@@ -306,32 +299,32 @@ window.__ModuleLoader__.load({
 
       return h("div", { className: "ollama-section" },
         h("div", { className: "ollama-sectionTitle" }, dict("endpoint.title")),
-        h("div", { className: "ollama-row" },
-          h("label", { className: "ollama-label" }, dict("endpoint.baseUrl")),
-          h("div", { className: "ollama-controls" },
-            h("input", {
-              className: "ollama-input",
-              value: draft,
-              placeholder: DEFAULT_BASE_URL,
-              onChange: (e) => setDraft(e.target.value),
-              onKeyDown: (e) => { if (e.key === "Enter") save(); },
-            }),
-            h("button", {
-              className: "ollama-btn ollama-btnPrimary",
-              disabled: saving,
-              onClick: save,
-            }, saving ? h(Spinner) : dict("endpoint.save")),
-            h("button", {
-              className: "ollama-btn",
-              onClick: () => onTest(draft.trim() || DEFAULT_BASE_URL),
-            }, testStatus?.testing ? h(Spinner) : dict("endpoint.test")),
-          )
+        h("div", { className: "ollama-field" },
+          h("label", { className: "ollama-fieldLabel" }, dict("endpoint.baseUrl")),
+          h("input", {
+            className: "ollama-input",
+            value: draft,
+            placeholder: DEFAULT_BASE_URL,
+            onChange: (e) => setDraft(e.target.value),
+            onKeyDown: (e) => { if (e.key === "Enter") save(); },
+          })
         ),
-        h("span", { className: "ollama-hint" }, dict("endpoint.hint")),
-        testStatus && !testStatus.testing && h("span", {
+        h("p", { className: "ollama-hint" }, dict("endpoint.hint")),
+        h("div", { className: "ollama-actions" },
+          h("button", {
+            className: "ollama-btn",
+            onClick: () => onTest(draft.trim() || DEFAULT_BASE_URL),
+          }, testStatus?.testing ? h(Spinner) : dict("endpoint.test")),
+          h("button", {
+            className: "ollama-btn ollama-btnPrimary",
+            disabled: saving,
+            onClick: save,
+          }, saving ? h(Spinner) : dict("endpoint.save")),
+        ),
+        testStatus && !testStatus.testing && h("p", {
           className: `ollama-status ${testStatus.ok ? "ollama-statusOk" : "ollama-statusErr"}`
         }, testStatus.ok
-          ? localeString(dict, "endpoint.connected", { n: testStatus.modelCount })
+          ? dict("endpoint.connected", { n: testStatus.modelCount })
           : `${dict("endpoint.failed")}: ${testStatus.error}`)
       );
     }
@@ -364,12 +357,10 @@ window.__ModuleLoader__.load({
           h("div", { className: "ollama-modelActions" },
             h("button", {
               className: "ollama-btn",
-              style: { fontSize: 11, padding: "3px 8px" },
               onClick: loadDetail,
             }, showDetail ? dict("models.hide") : dict("models.info")),
             h("button", {
               className: "ollama-btn ollama-btnDanger",
-              style: { fontSize: 11, padding: "3px 8px" },
               disabled: deleting,
               onClick: () => onDelete(model.name),
             }, deleting ? h(Spinner) : dict("models.remove")),
@@ -396,22 +387,22 @@ window.__ModuleLoader__.load({
       const [name, setName] = react.useState("");
       return h("div", { className: "ollama-section" },
         h("div", { className: "ollama-sectionTitle" }, dict("pull.title")),
-        h("div", { className: "ollama-controls" },
-          h("input", {
-            className: "ollama-input",
-            value: name,
-            placeholder: dict("pull.placeholder"),
-            disabled: pulling,
-            onChange: (e) => setName(e.target.value),
-            onKeyDown: (e) => { if (e.key === "Enter" && !pulling && name.trim()) onPull(name.trim()); },
-          }),
+        h("input", {
+          className: "ollama-input",
+          value: name,
+          placeholder: dict("pull.placeholder"),
+          disabled: pulling,
+          onChange: (e) => setName(e.target.value),
+          onKeyDown: (e) => { if (e.key === "Enter" && !pulling && name.trim()) onPull(name.trim()); },
+        }),
+        h("p", { className: "ollama-hint" }, dict("pull.hint")),
+        h("div", { className: "ollama-actions" },
           h("button", {
             className: "ollama-btn ollama-btnPrimary",
             disabled: pulling || !name.trim(),
             onClick: () => { if (name.trim()) onPull(name.trim()); },
           }, pulling ? h(Spinner) : dict("pull.button")),
         ),
-        h("span", { className: "ollama-hint" }, dict("pull.hint")),
         pullProgress && h("div", null,
           h("div", { className: "ollama-progress" },
             h("div", {
@@ -432,7 +423,6 @@ window.__ModuleLoader__.load({
       const value = snapshot?.value;
       const baseUrl = value?.baseURL || DEFAULT_BASE_URL;
 
-      const [open, setOpen] = react.useState(false);
       const [models, setModels] = react.useState([]);
       const [loading, setLoading] = react.useState(false);
       const [testStatus, setTestStatus] = react.useState(null);
@@ -441,7 +431,6 @@ window.__ModuleLoader__.load({
       const [deleting, setDeleting] = react.useState(null);
 
       react.useEffect(() => {
-        if (!open) return;
         let cancelled = false;
         (async () => {
           setLoading(true);
@@ -450,7 +439,7 @@ window.__ModuleLoader__.load({
           finally { if (!cancelled) setLoading(false); }
         })();
         return () => { cancelled = true; };
-      }, [open, baseUrl]);
+      }, [baseUrl]);
 
       const handleSave = async (newUrl) => {
         try { await scope.set("baseURL", newUrl); setTestStatus(null); setModels([]); }
@@ -496,42 +485,31 @@ window.__ModuleLoader__.load({
       };
 
       const handleDelete = async (modelName) => {
-        if (!confirm(localeString(t, "models.removeConfirm", { name: modelName }))) return;
+        if (!confirm(t("models.removeConfirm", { name: modelName }))) return;
         setDeleting(modelName);
         try {
           await ollamaDelete(baseUrl, modelName);
           setModels((prev) => prev.filter((m) => m.name !== modelName));
-        } catch (e) { alert(localeString(t, "models.removeFailed", { error: e.message })); }
+        } catch (e) { alert(t("models.removeFailed", { error: e.message })); }
         finally { setDeleting(null); }
       };
 
-      return h("li", { className: `ollama-card ${open ? "ollama-cardOpen" : ""}` },
-        h("button", { className: "ollama-header", onClick: () => setOpen(!open), type: "button" },
-          h("div", { className: "ollama-headText" },
-            h("span", { className: "ollama-name" }, t("settings.title")),
-            h("span", { className: "ollama-desc" },
-              `${baseUrl}${models.length > 0 ? ` — ${models.length}` : ""}`
-            ),
-          ),
-          h("span", { className: `ollama-chevron ${open ? "ollama-chevronOpen" : ""}` }, "▾"),
+      return h("div", { className: "ollama-body" },
+        h(EndpointSection, { baseUrl, dict: t, onSave: handleSave, onTest: handleTest, testStatus }),
+        h("div", { className: "ollama-section" },
+          h("div", { className: "ollama-sectionTitle" }, t("models.title")),
+          loading
+            ? h("div", { className: "ollama-status ollama-statusWarn" }, h(Spinner), ` ${t("models.loading")}`)
+            : models.length === 0
+              ? h("div", { className: "ollama-empty" }, t("models.empty"))
+              : h("div", { className: "ollama-modelsList" },
+                  models.map((m) => h(ModelRow, {
+                    key: m.name, model: m, baseUrl, dict: t,
+                    deleting: deleting === m.name, onDelete: handleDelete,
+                  }))
+                )
         ),
-        open && h("div", { className: "ollama-body" },
-          h(EndpointSection, { baseUrl, dict: t, onSave: handleSave, onTest: handleTest, testStatus }),
-          h("div", { className: "ollama-section" },
-            h("div", { className: "ollama-sectionTitle" }, t("models.title")),
-            loading
-              ? h("div", { className: "ollama-status ollama-statusWarn" }, h(Spinner), ` ${t("models.loading")}`)
-              : models.length === 0
-                ? h("div", { className: "ollama-empty" }, t("models.empty"))
-                : h("div", { className: "ollama-modelsList" },
-                    models.map((m) => h(ModelRow, {
-                      key: m.name, model: m, baseUrl, dict: t,
-                      deleting: deleting === m.name, onDelete: handleDelete,
-                    }))
-                  )
-          ),
-          h(PullSection, { baseUrl, dict: t, onPull: handlePull, pulling, pullProgress }),
-        )
+        h(PullSection, { baseUrl, dict: t, onPull: handlePull, pulling, pullProgress })
       );
     }
 
@@ -695,8 +673,8 @@ window.__ModuleLoader__.load({
             style: {
               background: "var(--dsw-alias-state-business-primary)",
               color: "var(--dsw-alias-label-primary-foreground)",
-              borderRadius: 8,
-              padding: "0 5px",
+              borderRadius: 999,
+              padding: "0 6px",
               fontSize: 10,
               lineHeight: "16px",
               marginLeft: 2,
@@ -719,7 +697,7 @@ window.__ModuleLoader__.load({
 
     // ─── Plugin Registration ──────────────────────────────────────────────────
 
-    const inject = ["slots", "settingsScope", "modelDirectories"];
+    const inject = ["slots", "configForms", "modelDirectories"];
 
     function apply(ctx) {
       const modelDirectories = ctx.modelDirectories;
@@ -731,27 +709,34 @@ window.__ModuleLoader__.load({
         || lang_dict["en-US"];
       const t = (key, params) => localeString(dict, key, params);
 
-      // Settings scope
-      const scope = ctx.settingsScope.bind({ namespace: SETTINGS_NS });
+      // Config form for the llm-ollama namespace.
+      // 0.1.7-rc.2 replaced the `settingsScope` service with `configForms`; the
+      // reader is `get(namespace)` and the returned face keeps the old
+      // `getSnapshot` / `subscribe` / `set` shape.
+      const scope = ctx.configForms.get(SETTINGS_NS);
       const getSnapshot = scope.getSnapshot.bind(scope);
       const subscribe = scope.subscribe.bind(scope);
       const useSnapshot = () => react.useSyncExternalStore(subscribe, getSnapshot);
 
-      // Settings card in Plugins page
-      ctx.slots.inject("settings.plugin.item", () => {
+      // ─── Configuration page ─────────────────────────────────────────────────
+      // `settings.plugin.item` no longer exists in 0.1.7-rc.2. A plugin's own
+      // configuration is rendered by the sidebar Plugins page through
+      // `plugins.bundle.config`, keyed by the bundle's package name, and that is
+      // this plugin's only configuration seat — no Settings nav entry.
+      // `slots.inject` waits for that page to declare the slot, so this is a
+      // no-op on a host that does not provide it.
+      ctx.slots.inject("plugins.bundle.config", () => {
         try {
           return ctx.slots.register(
             {
-              name: "settings.plugin.item",
-              key: SETTINGS_NS,
-              id: "dsh-ollama",
-              order: 200,
+              name: "plugins.bundle.config",
+              key: PKG_NAME,
               inject: () => ({ scope, useSnapshot, t }),
             },
-            OllamaCard
+            (props) => (props.view === "summary" ? null : h(OllamaCard, props))
           );
         } catch (err) {
-          console.warn(`dsh-ollama: settings card rejected (${err instanceof Error ? err.message : String(err)})`);
+          console.warn(`dsh-ollama: bundle config card rejected (${err instanceof Error ? err.message : String(err)})`);
         }
       });
 

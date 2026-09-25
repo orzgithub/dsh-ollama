@@ -9,18 +9,18 @@
 - **Ollama 原生 API** — 直接使用 `/api/chat` NDJSON 流式传输，无需 OpenAI 兼容层
 - **模型管理** — 浏览已安装模型、拉取新模型、查看详情、移除模型
 - **可配置参数** — 调整 Ollama 专有参数，如 Temperature、Top K/P、Mirostat、Seed、思考模式等
-- **GUI 配置** — 所有设置通过 DSH 设置面板管理，无需手动编辑配置文件
+- **GUI 配置** — 所有设置通过 DSH 插件页管理，无需手动编辑配置文件
 
 ## 前置要求
 
 - 已安装并运行 [Ollama](https://ollama.com/)（默认地址：`http://127.0.0.1:11434`）
-- [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) v0.1.7+
+- [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) v0.17+
 
 ## 配置
 
 所有配置均通过 DSH 图形界面完成：
 
-1. 打开 **设置 > 插件 > Ollama**
+1. 打开侧栏 **插件** 页，使用其中的 **Ollama** 卡片
 2. **连接设置** — 设置 Ollama 服务器地址并测试连接
 3. **已安装模型** — 查看、检视和移除模型
 4. **拉取模型** — 通过名称下载新模型（如 `llama3.1:8b`）

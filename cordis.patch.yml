@@ -2,7 +2,9 @@
 #
 # Uses Ollama's native /api/chat protocol with NDJSON streaming,
 # native thinking/reasoning fields, and native tool calling.
-# Configure via the llm-ollama: section in settings.yaml.
+# The row id below is also the settings namespace: the configuration served in
+# the GUI is the set of volatile Config fields declared in lib/config.js, so
+# edits land live in this row instead of in a separate settings document.
 - insert:
     - id: llm-ollama
       name: 'dsh-ollama'
