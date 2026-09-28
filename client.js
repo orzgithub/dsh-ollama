@@ -48,6 +48,8 @@ window.__ModuleLoader__.load({
         "params.num_ctx": "Context Length",
         "params.stop": "Stop Sequences",
         "params.stopHint": "逗号分隔",
+        "params.keep_alive": "Keep Alive",
+        "params.keep_aliveHint": "驻留时长（秒或如 5m/1h/-1），留空为默认",
         "params.mirostat": "Mirostat",
         "params.mirostat_tau": "Mirostat Tau",
         "params.mirostat_eta": "Mirostat Eta",
@@ -97,6 +99,8 @@ window.__ModuleLoader__.load({
         "params.num_ctx": "Context Length",
         "params.stop": "Stop Sequences",
         "params.stopHint": "comma-separated",
+        "params.keep_alive": "Keep Alive",
+        "params.keep_aliveHint": "Residency duration (seconds, or 5m/1h/-1); blank = default",
         "params.mirostat": "Mirostat",
         "params.mirostat_tau": "Mirostat Tau",
         "params.mirostat_eta": "Mirostat Eta",
@@ -527,10 +531,13 @@ window.__ModuleLoader__.load({
       { key: "num_predict", label: "params.num_predict", type: "number", step: 1 },
       { key: "num_ctx", label: "params.num_ctx", type: "number", step: 256, min: 1 },
       { key: "stop", label: "params.stop", type: "text" },
+      { key: "keep_alive", label: "params.keep_alive", type: "string" },
     ];
 
     function ParamInput({ field, value, onChange, dict }) {
       const displayValue = value != null ? String(value) : "";
+      const isString = field.type === "string";
+      const isText = field.type === "text";
       return h("div", { className: "ollama-paramsField" },
         h("label", { className: "ollama-paramsLabel" },
           dict(field.label),
@@ -538,16 +545,21 @@ window.__ModuleLoader__.load({
         ),
         h("input", {
           className: "ollama-paramsInput",
-          type: field.type === "text" ? "text" : "number",
+          type: (isText || isString) ? "text" : "number",
           value: displayValue,
           step: field.step,
           min: field.min,
           max: field.max,
-          placeholder: field.type === "text" ? dict("params.stopHint") : dict("params.defaultLabel"),
+          placeholder: isString
+            ? dict("params.keep_aliveHint")
+            : isText
+              ? dict("params.stopHint")
+              : dict("params.defaultLabel"),
           onChange: (e) => {
             const v = e.target.value;
             if (v === "") { onChange(undefined); return; }
-            if (field.type === "text") { onChange(v.split(",").map((s) => s.trim()).filter(Boolean)); return; }
+            if (isText) { onChange(v.split(",").map((s) => s.trim()).filter(Boolean)); return; }
+            if (isString) { onChange(v); return; }
             const n = Number(v);
             onChange(Number.isNaN(n) ? undefined : n);
           },
