@@ -31,7 +31,9 @@ window.__ModuleLoader__.load({
         "models.removeFailed": "移除失败: {error}",
         "pull.title": "拉取模型",
         "pull.placeholder": "输入模型名称，例如 llama3.1:8b, qwen2.5:14b",
-        "pull.hint": "支持 Ollama 库模型或 HuggingFace tag",
+        "pull.hint": "支持 {ollama} 模型或 {hf} tag",
+        "pull.ollamaLibrary": "Ollama 库",
+        "pull.huggingface": "HuggingFace",
         "pull.button": "拉取",
         "pull.complete": "拉取完成",
         "pull.starting": "开始拉取...",
@@ -82,7 +84,9 @@ window.__ModuleLoader__.load({
         "models.removeFailed": "Remove failed: {error}",
         "pull.title": "Pull Model",
         "pull.placeholder": "Enter model name, e.g. llama3.1:8b, qwen2.5:14b",
-        "pull.hint": "Supports Ollama library models or HuggingFace tags",
+        "pull.hint": "Supports {ollama} models or {hf} tags",
+        "pull.ollamaLibrary": "Ollama library",
+        "pull.huggingface": "HuggingFace",
         "pull.button": "Pull",
         "pull.complete": "Pull complete",
         "pull.starting": "Starting pull...",
@@ -124,6 +128,8 @@ window.__ModuleLoader__.load({
 .ollama-fieldLabel{color:var(--dsw-alias-label-secondary);font-size:12px;font-weight:500;line-height:18px}
 .ollama-actions{display:flex;justify-content:flex-end;gap:8px}
 .ollama-hint{color:var(--dsw-alias-label-tertiary);margin:0;font-size:12px;line-height:18px}
+.ollama-link{color:var(--dsw-alias-link);font-weight:500;cursor:pointer;text-decoration:none}
+.ollama-link:hover,.ollama-link:focus{outline:none;text-decoration:underline dotted var(--dsw-alias-link);text-underline-offset:3px}
 .ollama-input{box-sizing:border-box;height:32px;padding:0 10px;border:.5px solid var(--dsw-alias-border-l4);border-radius:var(--dsw-radius-md);background:var(--dsw-alias-bg-layer-1);font:inherit;font-size:14px;line-height:22px;color:var(--dsw-alias-label-primary);width:100%;outline:none}
 .ollama-input::placeholder{color:var(--dsw-alias-label-dimmed)}
 .ollama-input:hover:not(:disabled){border-color:var(--dsw-alias-border-l3)}
@@ -193,6 +199,10 @@ window.__ModuleLoader__.load({
     const PKG_NAME = "dsh-ollama";
     const SETTINGS_NS = "llm-ollama";
     const DEFAULT_BASE_URL = "http://127.0.0.1:11434";
+    const PULL_LINKS = {
+      "{ollama}": { href: "https://ollama.com/library", label: "pull.ollamaLibrary" },
+      "{hf}": { href: "https://huggingface.co", label: "pull.huggingface" },
+    };
 
     function formatBytes(bytes) {
       if (!bytes || bytes === 0) return "—";
@@ -393,7 +403,20 @@ window.__ModuleLoader__.load({
           onChange: (e) => setName(e.target.value),
           onKeyDown: (e) => { if (e.key === "Enter" && !pulling && name.trim()) onPull(name.trim()); },
         }),
-        h("p", { className: "ollama-hint" }, dict("pull.hint")),
+        h("p", { className: "ollama-hint" },
+          dict("pull.hint").split(/(\{ollama\}|\{hf\})/).map((chunk, i) => {
+            const link = PULL_LINKS[chunk];
+            return link
+              ? h("a", {
+                  key: i,
+                  className: "ollama-link",
+                  href: link.href,
+                  target: "_blank",
+                  rel: "noreferrer noopener",
+                }, dict(link.label))
+              : chunk;
+          })
+        ),
         h("div", { className: "ollama-actions" },
           h("button", {
             className: "ollama-btn ollama-btnPrimary",
