@@ -11,6 +11,22 @@ A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin for
 - **Configurable Parameters** — Adjust Ollama-specific params like Temperature, Top K/P, Mirostat, Seed, thinking mode, and more
 - **GUI Configuration** — All settings managed through the DSH Plugins page, no manual config files
 
+## Installation
+
+Install the plugin into a DSH profile (the Web profile is usually named `web`):
+
+```bash
+dsh plugin --profile <your profile, usually web> add github:orzgithub/dsh-ollama#0.1.1
+```
+
+For example, into the `web` profile:
+
+```bash
+dsh plugin --profile web add github:orzgithub/dsh-ollama#0.1.1
+```
+
+`#0.1.1` pins the release tag — omit it to follow the repository's default branch. Restart DSH afterwards; the **Ollama** card then appears on the sidebar **Plugins** page.
+
 ## Prerequisites
 
 - [Ollama](https://ollama.com/) installed and running (default: `http://127.0.0.1:11434`)

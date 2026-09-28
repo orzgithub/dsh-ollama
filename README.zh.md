@@ -11,6 +11,22 @@
 - **可配置参数** — 调整 Ollama 专有参数，如 Temperature、Top K/P、Mirostat、Seed、思考模式等
 - **GUI 配置** — 所有设置通过 DSH 插件页管理，无需手动编辑配置文件
 
+## 安装
+
+将插件安装到某个 DSH profile（Web profile 通常名为 `web`）：
+
+```bash
+dsh plugin --profile <你的 profile，通常是 web> add github:orzgithub/dsh-ollama#0.1.1
+```
+
+例如安装到 `web` profile：
+
+```bash
+dsh plugin --profile web add github:orzgithub/dsh-ollama#0.1.1
+```
+
+`#0.1.1` 为版本标签；省略则跟随仓库默认分支。安装后重启 DSH，侧栏 **插件** 页中即会出现 **Ollama** 卡片。
+
 ## 前置要求
 
 - 已安装并运行 [Ollama](https://ollama.com/)（默认地址：`http://127.0.0.1:11434`）
