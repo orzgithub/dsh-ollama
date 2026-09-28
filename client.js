@@ -48,9 +48,6 @@ window.__ModuleLoader__.load({
         "params.num_ctx": "Context Length",
         "params.stop": "Stop Sequences",
         "params.stopHint": "逗号分隔",
-        "params.think": "Thinking",
-        "params.thinkOn": "开启",
-        "params.thinkOff": "关闭",
         "params.mirostat": "Mirostat",
         "params.mirostat_tau": "Mirostat Tau",
         "params.mirostat_eta": "Mirostat Eta",
@@ -100,9 +97,6 @@ window.__ModuleLoader__.load({
         "params.num_ctx": "Context Length",
         "params.stop": "Stop Sequences",
         "params.stopHint": "comma-separated",
-        "params.think": "Thinking",
-        "params.thinkOn": "On",
-        "params.thinkOff": "Off",
         "params.mirostat": "Mirostat",
         "params.mirostat_tau": "Mirostat Tau",
         "params.mirostat_eta": "Mirostat Eta",
@@ -533,28 +527,9 @@ window.__ModuleLoader__.load({
       { key: "num_predict", label: "params.num_predict", type: "number", step: 1 },
       { key: "num_ctx", label: "params.num_ctx", type: "number", step: 256, min: 1 },
       { key: "stop", label: "params.stop", type: "text" },
-      { key: "think", label: "params.think", type: "toggle" },
     ];
 
     function ParamInput({ field, value, onChange, dict }) {
-      if (field.type === "toggle") {
-        return h("div", { className: "ollama-paramsField" },
-          h("label", { className: "ollama-paramsLabel" }, dict(field.label)),
-          h("div", { className: "ollama-paramsToggle" },
-            h("button", {
-              className: `ollama-paramsToggleBtn ${value === true ? "ollama-paramsToggleBtnActive" : ""}`,
-              type: "button",
-              onClick: () => onChange(value === true ? undefined : true),
-            }, dict("params.thinkOn")),
-            h("button", {
-              className: `ollama-paramsToggleBtn ${value === false ? "ollama-paramsToggleBtnActive" : ""}`,
-              type: "button",
-              onClick: () => onChange(value === false ? undefined : false),
-            }, dict("params.thinkOff")),
-          )
-        );
-      }
-
       const displayValue = value != null ? String(value) : "";
       return h("div", { className: "ollama-paramsField" },
         h("label", { className: "ollama-paramsLabel" },
