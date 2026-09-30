@@ -16,16 +16,16 @@
 将插件安装到某个 DSH profile（Web profile 通常名为 `web`）：
 
 ```bash
-dsh plugin --profile <你的 profile，通常是 web> add github:orzgithub/dsh-ollama#0.1.1
+dsh plugin --profile <你的 profile，通常是 web> add github:orzgithub/dsh-ollama#0.1.2
 ```
 
 例如安装到 `web` profile：
 
 ```bash
-dsh plugin --profile web add github:orzgithub/dsh-ollama#0.1.1
+dsh plugin --profile web add github:orzgithub/dsh-ollama#0.1.2
 ```
 
-`#0.1.1` 为版本标签；省略则跟随仓库默认分支。安装后重启 DSH，侧栏 **插件** 页中即会出现 **Ollama** 卡片。
+`#0.1.2` 为版本标签；省略则跟随仓库默认分支。安装后重启 DSH，侧栏 **插件** 页中即会出现 **Ollama** 卡片。
 
 ## 前置要求
 

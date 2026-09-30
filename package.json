@@ -1,6 +1,6 @@
 {
   "name": "dsh-ollama",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "DeepSeek Harness plugin for Ollama native protocol",
   "type": "module",
   "main": "lib/index.js",

@@ -16,16 +16,16 @@ A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin for
 Install the plugin into a DSH profile (the Web profile is usually named `web`):
 
 ```bash
-dsh plugin --profile <your profile, usually web> add github:orzgithub/dsh-ollama#0.1.1
+dsh plugin --profile <your profile, usually web> add github:orzgithub/dsh-ollama#0.1.2
 ```
 
 For example, into the `web` profile:
 
 ```bash
-dsh plugin --profile web add github:orzgithub/dsh-ollama#0.1.1
+dsh plugin --profile web add github:orzgithub/dsh-ollama#0.1.2
 ```
 
-`#0.1.1` pins the release tag — omit it to follow the repository's default branch. Restart DSH afterwards; the **Ollama** card then appears on the sidebar **Plugins** page.
+`#0.1.2` pins the release tag — omit it to follow the repository's default branch. Restart DSH afterwards; the **Ollama** card then appears on the sidebar **Plugins** page.
 
 ## Prerequisites
 
