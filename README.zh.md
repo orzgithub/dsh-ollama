@@ -30,7 +30,7 @@ dsh plugin --profile web add github:orzgithub/dsh-ollama#0.1.1
 ## 前置要求
 
 - 已安装并运行 [Ollama](https://ollama.com/)（默认地址：`http://127.0.0.1:11434`）
-- [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) v0.17+
+- [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) `0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2`
 
 ## 配置
 
